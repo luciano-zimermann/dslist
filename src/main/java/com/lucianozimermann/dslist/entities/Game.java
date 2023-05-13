@@ -16,14 +16,21 @@ public class Game
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String tile;
+	
+	private String title;
 	
 	@Column( name = "game_year")
 	private Integer year;
+	
 	private String genre;
-	private String platform;
+	private String platforms;
+	private Double score;
 	private String imgUrl;
+	
+	@Column( columnDefinition = "TEXT")
 	private String shortDescription;
+	
+	@Column( columnDefinition = "TEXT")
 	private String longDescription;
 
 	public Game() 
@@ -40,14 +47,14 @@ public class Game
 		this.id = idLong;
 	}
 
-	public String getTile() 
+	public String getTilte() 
 	{
-		return tile;
+		return title;
 	}
 
-	public void setTile(String tile) 
+	public void setTitle(String title) 
 	{
-		this.tile = tile;
+		this.title = title;
 	}
 
 	public Integer getYear() 
@@ -70,14 +77,24 @@ public class Game
 		this.genre = genre;
 	}
 
-	public String getPlatform() 
+	public String getPlatforms() 
 	{
-		return platform;
+		return platforms;
 	}
 
-	public void setPlatform(String platform) 
+	public void setPlatforms(String platforms) 
 	{
-		this.platform = platform;
+		this.platforms = platforms;
+	}
+	
+	public Double getScore() 
+	{
+		return score;
+	}
+	
+	public void setScore(Double score) 
+	{
+		this.score = score;
 	}
 
 	public String getImgUrl() 
